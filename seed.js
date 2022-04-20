@@ -7,9 +7,12 @@ const {User, Item} = require('./models');
 
 const createUsers = async () => {
 
+    const pwd1 = await bcrypt.hash('1234', 2)
+    const pwd2 = await bcrypt.hash('password', 2)
+
     const users = [
-        {name : 'Dan', password: '1234' },
-        {name : 'Linda', password : 'password'}
+        {name : 'Dan', password: pwd1},
+        {name : 'Linda', password : pwd2}
     ];
 
     return users
